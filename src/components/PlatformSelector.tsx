@@ -12,14 +12,14 @@ const PlatformSelector = () => {
   const selectedPlatformId = useGameQueryStore(
     (selector) => selector.gameQuery.platformId
   );
-  const selectedlatform = usePlatform(selectedPlatformId);
+  const selectedPlatform = usePlatform(selectedPlatformId);
 
   if (error) return null;
 
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedlatform?.name || "Platforms"}
+        {selectedPlatform?.name || "Platforms"}
       </MenuButton>
       <MenuList>
         {data?.results.map((platform) => (
